@@ -1,0 +1,146 @@
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-top: 20px;
+        margin:0 auto;
+        padding:2em;
+	text-align:left;
+        line-height: 110%;
+}
+
+.coursename {
+    margin-bottom: 20px;
+    background: lightgray;
+}
+
+/* CSS to manage embeded gcal */
+
+.calendar-container {
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 400px;
+    height: 0;
+    overflow: hidden;
+}
+
+.calendar-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* Calendar-structure classes */
+
+.calendar {
+    counter-reset:session
+}
+
+.session {
+    margin: 0;
+    padding-left: 20px; 
+    background:lightgray;
+    font-size: large;
+    color:black;
+}
+
+.session::before {
+    counter-increment: session;
+    content: "Class " counter(session);
+                                      
+}
+.activity {
+    font-weight:bold;
+}
+
+.reading{
+    
+}
+
+/* small-chunk styling classes */
+
+H2 {
+    font-size:150%;
+}
+
+
+H3 {
+    margin: 1em 0em;
+    font-size:120%;
+}
+
+H4 {
+    margin: 1em 0em;
+}
+
+ul {
+    padding: 1em 0em;
+}
+
+ul li {
+    margin-left: 35px;
+}
+
+.alert {
+    color:green;
+    font-size: medium;
+    margin-left: 20px;
+}
+
+strong {
+	color:#799131;
+}
+
+A:link {
+	text-decoration:underline;
+	color:#696969;
+}
+
+A:active {
+	text-decoration:underline;
+	color:#696969;
+}
+
+A:visited {
+	text-decoration:underline;
+	color:#696969;
+}
+
+pre {
+	white-space:pre-wrap;
+	white-space:-moz-pre-wrap;
+	white-space:-o-pre-wrap;
+	background:#faf8f0;
+}
+
+
+code {
+    background:#faf8f0;
+
+}
+
+.exam {
+  color:red;
+}
+
+.project {
+  color:green;
+}
+
+#content #pre-stylish code {
+	display:block;
+	padding:.5em 1em;
+	border:1px solid #bebab0;
+}
+
+/* paragraph styles */
+
+p {
+    margin-top:10px;
+}
+
+p:first-child {
+    margin-top:0px;
+}
+
