@@ -1,0 +1,16 @@
+Dear students, 
+
+I'm looking forward to our first meeting in a couple weeks! To prepare for class, please review the syllabus/calendar/etc I've posted at http://bc-cisc3130-f17.github.io/.
+
+In particular, please take note of a few specific things:
+
+1. I'll be teaching the class using "Team-Based Learning." Several of you have had this experience with me before; others have been in other classes organized this way. If you're new to Team-Based Learning, please read the main page of the site carefully (and if you've been in my courses before, you might want to read to see a few small changes I've made).
+
+2. Please check the calendar (http://bc-cisc3130-f17.github.io/calendar) for the reading I expect you to have done before you come to the first day of class (posted under "Class 1"). The books for class are all open-source; they are available in electronic format for no cost, and in some cases you can get printed copies for a minimal price. (This calendar will be updated frequently with additional links and changes. I will email you to let you know of major changes, but you should check every couple days.)
+
+3. Also, please fill out the short survey you'll find linked in the calendar under "Class 1." This mostly is about making sure we can communicate during the semester.
+
+4. Finally, we'll be using the GNU C Compiler collection (including GNU make) to build our programs. You'll need version 4.8 or later. If you have access to a Linux system, that should be sufficient; you can also install GCC fairly easily on a Windows or Mac machine; see https://gcc.gnu.org/install/binaries.html. If you have a laptop you can bring to class, please plan on doing so--our classroom is not a computer lab, so we'll be relying on laptops to do in-class exercises.
+
+Until we meet,
+Scott Dexter
