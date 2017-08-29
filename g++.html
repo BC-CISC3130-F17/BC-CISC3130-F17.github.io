@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Using g++</title>
+
+<link rel="stylesheet" type="text/css" href="css/html5reset.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/col.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/8cols.css" media="all"/>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro'
+    rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+  <div class="section group">
+    <div class="coursename span_8_of_8">
+      <a href="index.html">CISC 3130</a>
+    </div>
+  </div>
+
+  <h2>Using <code>g++</code></h2>
+
+  <p>Here's some more detailed instructions on the compiler for this class. Specifically, you need to have, at minimum <code>
+    g++
+    </code>(version 4.8.2 or newer) and <code>
+      make
+    </code> installed on your machine. If you have <code>
+      g++
+    </code> installed, run <code>
+      g++ --version
+    </code>to make sure you have a sufficiently recent version.</p>
+
+    <h3>Linux</h3>
+
+  <p>If you have a Linux installation you're comfortable using, make sure you've installed the packages containing g++ and make (it's almost certain that make is already installed.</p>
+
+  <h3>MacOS</h3>
+
+  <p>Probably the easiest way to install these tools on a Mac is to use <a href="https://brew.sh">HomeBrew</a>. Note that you may need to install some elements of XCode in order to use HomeBrew.</p>
+
+  <p>Once you've installed HomeBrew, run two commands: <code>
+    brew install g++
+    </code>and <code>
+      brew install make
+    </code>.  </p>
+
+  <p>Then you need to make sure the HomeBrew versions are the ones you actually run. Edit the file called <code>
+      .bash_profile
+    </code>. At the top, add a few lines:</p>
+
+<p>
+  <pre>
+# to access Homebrew packages
+
+export PATH=/usr/local/bin:$PATH
+
+alias g++='/usr/local/bin/g++-7'
+alias make='/usr/local/bin/gmake'
+</pre>
+  </p>
+
+  <p>To ensure everything is working right, run <code>
+    g++ --version
+    </code> and <code>
+      make --version
+    </code>. You should see g++ at least  version 7 and make version at least 4.2.1.
+
+  </p>
+
+<h3>Windows</h3>
+
+  <p>For Windows, it seems like the most straightforward approach is to use <a href="http://win-builds.org/doku.php">Win-Builds</a>. Click on the "Download and Installation" link, and Windows, and you'll end up <a href="http://win-builds.org/doku.php/download_and_installation_from_windows">here</a>.</p>
+
+  <p>Click on "Win-Builds 1.5.0" and run the executable that downloads. Pick "Native windows" and "i686", and, as it asks, install in  a new directory, like <code>C:\Win-builds</code>. When the GUI application runs, you'll have the option of picking which packages to install. It's easiest just to install everything (and click the "Process" button), but if you're short on space and want to do a minimal install you just need the <code>
+      gcc</code>, <code>gcc-g++</code>, and <code>make</code> packages.</p>
+
+  <p>The final step is to add <code>C:\Win-builds\bin</code> to your <code>Path</code> environment variable; how exactly to do that depends on your version of Windows; <a href="https://www.computerhope.com/issues/ch000549.htm">this quick guide</a> seems comprehensive. (Please note: I'm not really a Windows guy.</p>
+
+
+ <hr/>
+</body>
+</html>
