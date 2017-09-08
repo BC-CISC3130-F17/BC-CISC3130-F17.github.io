@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <h2>Using <code>g++</code></h2>
+  <h2>Installing <code>g++</code></h2>
 
   <p>Here's some more detailed instructions on the compiler for this class. Specifically, you need to have, at minimum <code>
     g++
@@ -79,9 +79,14 @@ alias make='/usr/local/bin/gmake'
   <p>Click on "Win-Builds 1.5.0" and run the executable that downloads. Pick "Native windows" and "i686", and, as it asks, install in  a new directory, like <code>C:\Win-builds</code>. When the GUI application runs, you'll have the option of picking which packages to install. It's easiest just to install everything (and click the "Process" button), but if you're short on space and want to do a minimal install you just need the <code>
       gcc</code>, <code>gcc-g++</code>, and <code>make</code> packages.</p>
 
-  <p>The final step is to add <code>C:\Win-builds\bin</code> to your <code>Path</code> environment variable; how exactly to do that depends on your version of Windows; <a href="https://www.computerhope.com/issues/ch000549.htm">this quick guide</a> seems comprehensive. (Please note: I'm not really a Windows guy.</p>
+  <p>The final step is to add <code>C:\Win-builds\bin</code> to your <code>Path</code> environment variable; how exactly to do that depends on your version of Windows; <a href="https://www.computerhope.com/issues/ch000549.htm">this quick guide</a> seems comprehensive. (Please note: I'm not really a Windows guy).</p>
 
+  <h2>Using <code>g++</code></h2>
 
+  <p>Once you've installed <code>g++</code> and <code>make</code>, you need to be able to use them! If you're unfamiliar with <code>make</code>, first read <a href="https://www.gnu.org/software/make/manual/make.html#Introduction">An Introduction to Makefiles</a> from the <code>make</code> manual. <a href="https://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/makefile.html">This tutorial</a> also walks you through a useful example.</p>
+
+  <p>The makefile discussion may give you enough of an idea about how to use <code>g++</code>, but for more details, read the GCC manual ("GCC" stands for Gnu Compiler Collection). In particular, <a href="http://www.linuxtopia.org/online_books/an_introduction_to_gcc/gccintro_53.html">Chapter 7</a> talk about how specifically to compile a C++ program; <a href="http://www.linuxtopia.org/online_books/an_introduction_to_gcc/gccintro_8.html">Chapter 2</a> gives more general information about the compilations process. Also note that for this class, you must always compile with the <code>std=c++11</code> flag.</p>
+  </p>
  <hr/>
 </body>
 </html>

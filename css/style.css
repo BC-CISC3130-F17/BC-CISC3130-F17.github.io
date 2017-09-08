@@ -62,6 +62,7 @@ body {
 /* small-chunk styling classes */
 
 H2 {
+    margin: 1em 0em;
     font-size:150%;
 }
 
