@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Unit 5 Reading Guide</title>
+
+<link rel="stylesheet" type="text/css" href="css/html5reset.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/col.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/8cols.css" media="all"/>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro'
+    rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+  <div class="section group">
+    <div class="coursename span_8_of_8">
+      <a href="index.html">CISC 3130</a>
+    </div>
+  </div>
+
+  <h2>Unit 5 Reading Guide</h2>
+
+
+  <p>You're probably already familiar with a few sorting algorithms&dash;bubble sort almost certainly, and perhaps a couple others. <em>Insertion</em> sort imagines that one end of the array is already sorted, then expands that end, inserting each newly-included element in the right position in the sorted end of the array. Once all the elements have been included, the whole array is sorted. <em>Selection</em> sort looks through the array for the biggest (or smallest) element, and once it's been selected, moves it to the end of the array, then repeats this process with the remaining elements until (again) the array is sorted.</p>
+
+  <p>What is the big-Oh efficiency of these sorting algorithms? (They're all the same...) For each of those algorithms, are there arrays that can be sorted in less than worst-case time?</p>
+  <hr/>
+
+  <p>Chapter 11 introduces some more sophisticated sorting algorithms, divided into "comparison-based" and non-comparison-based approaches. The algorithms you already know are comparison-based, so it's probably easiest to start there.  </p>
+
+  <p>The first step is to understand how the algorithms basically work. I recommend two parallel approaches (if you get stuck with one, work on the other). First, try to describe in general terms how the algorithm works. (Specific enough so that you can distinguish between different algorithms&mdash;so saying "it sorts the array" is not specific enough!) Don't just translate the code into English, but try to write down, "first it does this, then it does that, then depending on this factor, it recursively does this other thing." Also, apply each algorithm to sorting a small array. Not so small that there's hardly any work to be done, but not so big it makes you crazy. Like 6 to 10 elements.</p>
+
+  <p>Once you have a sense of these algorithms work, it's time to think a little more broadly about sorting. First, check out the paragraph in the chapter introduction that says, "Before continuing, we should note that any of the SSet or priority Queue implementations presented in previous chapters..." What is this paragraph saying? Can you write a one-sentence summary of the main idea?</p>
+
+  <p>Now go back to merge sort--maybe the easiest of the three sorts to understand? The formal proof of Theorem 11.1 is a little heavy (especially if you haven't studied induction), but as the book says, the important idea of the theorem is captured in Figure 11.2. So spend some time understanding how that picture essentially justifies the efficiency claimed for merge sort.</p>
+
+  <p>Quicksort is probably the most famous sorting algorithm. Like merge sort, it's easiest to describe in recursive terms. Both these algorithms use a kind of "divide-and-conquer" approach, but they work in fairly different ways. Try to come up with a couple different ways to describe how the two algorithms are different from each other.</p>
+
+  <p>The essential idea of heapsort should be pretty easy to grasp after the time we just spent on heaps. But the paragraph that starts, "A key subroutine in heap sort is the constructor..." makes things a little more complicated. What is the efficiency gained by the technique described in this paragraph? Does this gain improve the big-Oh efficiency of heapsort? You should be able to pretty much understand what's happening in Theorem 11.1</p>
+
+  <p>Section 11.1.4 has some pretty subtle reasoning. Read through it a couple times and do your best to follow the argument. What's Figure 11.5 illustrating? 11.6? You should have a sense of how Theorem 11.5 works (even if you're not totally sold on that business with the log(n!)...). Theorem 11.6 relies on some probabilistic arguments, so don't sweat those details. But you should try to follow the story about how a randomized algorithm can be 'converted' into a deterministic one. And finally, you should certainly understand what these two theorems <em>mean</em>.</p>
+<hr/>
+<p>On to the second section...</p>
+
+<p>Right away, an important setence: "Specialized for sorting small integers, these algorithms elude the lower-bounds of Theorem 11.5..." What does that mean? Eluding lower-bounds? What do you expect about the efficiency of the algorithms in this chapter? </p>
+
+<p>So, again, the first thing is to understand how these algorithms work. Look at the array a in Figure 11.7. How is this array different from the array(s) you used to understand the algorithms from the previous section? What is the most important characteristic of this array? Work through the example in this code. At first, it's not clear why it's a good idea to convert the array c to c'. But once you break down b[--c[a[i]]] = a[i] you'll probably have a sense. (Can you describe in English what that for loop, and all that nested indexing, is doing?)</p>
+
+  <p>The Theorem should be pretty easy to understand&mdash;but before you leave this section, be sure you understand what these sentences are talking about: (1) "At this point, we could use c to fill in the output array b directly. However, this would not work if the elements of a have associated data. Therefore we spend a little extra effort to copy the elements of a into b." and (2) The counting-sort algorithm has the nice property of being stable; it preserves the relative order of equal elements. If two elements a[i] and a[j] have the same value, and i&lt;j then a[i] will appear before a[j] in b. </p>
+
+  <p>The book's treatment of radix sort is a little difficult mainly because it suddenly switches into binary representations. So, go to <a href="https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/RadixSort.html">this visualization</a>
+    and study the "animation" and do the exercise until you understand the radix sort idea with base 10 numbers.</p>
+
+ <hr/>
+</body>
+</html>
