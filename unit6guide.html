@@ -24,7 +24,7 @@
   <h2>Unit 6 Reading Guide</h2>
 
 
-  <p>It's probably useful to start understanding the chapter by checking out what "hash" means. For example, on <a href="https://en.wikipedia.org/wiki/Hash_function">Wikipedia</a>, a "hash function" is described as any function "that can be used to map data of arbitrary size to data of fixed size." And indeed, at the beginning of 5.1, the book says, "The hash value of a data item x, denoted hash(x) is a value in the range 0...t.length-1." That is, no matter <em>what</em> kind of thing x is, hash() will always produce a value between 0 a t.length-1. Data of arbitrary size (x) is being mapped to data of fixed size (the index of the array).
+  <p>It's probably useful to start understanding the chapter by checking out what "hash" means. For example, on <a href="https://en.wikipedia.org/wiki/Hash_function">Wikipedia</a>, a "hash function" is described as any function "that can be used to map data of arbitrary size to data of fixed size." And indeed, at the beginning of 5.1, the book says, "The hash value of a data item x, denoted hash(x) is a value in the range 0...t.length-1." That is, no matter <em>what</em> kind of thing x is, hash() will always produce a value between 0 and t.length-1. Data of arbitrary size (x) is being mapped to data of fixed size (the index of the array).
   </p>
 
 
@@ -34,7 +34,7 @@
   <p>In the initial discussion of hashing with chaining, the book talks about the function hash() but doesn't actually define the function. What makes for a "good" hash function versus a "bad" hash function? What if hash() is defined as the simple function hash(x) = 1? Is that good or bad?
   </p>
 
-  <p>Note that the code in 5.1.1 is just a bit different from the formula in the&mdash;the text talks about z &middot; x mod 2<sup>w</sup>, but the code talks about <code>hashCode(x)</code> instead of just x. Don't worry about that for now--imagine the code just says <code>x</code>: section 5.3 will clear this up.
+  <p>Note that the code in 5.1.1 is just a bit different from the formula in the text&mdash;the text talks about z &middot; x mod 2<sup>w</sup>, but the code talks about <code>hashCode(x)</code> instead of just x. Don't worry about that for now--imagine the code just says <code>x</code>: section 5.3 will clear this up.
   </p>
 
   <p>You should understand what Lemmas 5.1 and 5.2 say, as well as Theorem 5.1, but don't worry about the proofs. What <em>do</em> Lemmas 5.1 and 5.2 say? Restate them in your own words, maybe with a little less mathematics. Going back to Chapter 1, what data structure does a hash table implement?
@@ -59,7 +59,7 @@
   <p>Sections 5.3.2 and 5.3.3 use a fair amount of mathematics. Don't worry about the math. But <em>why</em> do we need to that much fiddly stuff? What's the problem we're trying to solve? Why wouldn't a simpler solution be just as good?
   </p>
 
-  <p>Finally, let's talk about how hash tables are used in the libraries of programming languages. In Java, one very commonly used class is <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>; the C++ STL offers a similar template class, <a href="http://www.cplusplus.com/reference/unordered_map/unordered_map/">unordered_map</a>. In both cases, the idea is to make an association between a <em>key value</em> and a <em>mapped value</em> (sometimes just called <em>key</em> and <em>value</em>). The <em>mapped values</em> are stored in a hash table, at a position determined by the hash of the <em>key value</em>. You can think of this "map" idea is being similar to a dictionary: the key values are the words in a dictionary, and the mapped values are the definitions. If I know a word, I can very quickly find its definition. (Some words have multiple definitions&mdash;how does that relate to the <em>hash</em>map?) Reading the documentation for the C++ and Java implementations, can you tell whether these hash tables are using chaining or linear probing?
+  <p>Finally, let's talk about how hash tables are used in the libraries of programming languages. In Java, one very commonly used class is <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>; the C++ STL offers a similar template class, <a href="http://www.cplusplus.com/reference/unordered_map/unordered_map/">unordered_map</a>. In both cases, the idea is to make an association between a <em>key value</em> and a <em>mapped value</em> (sometimes just called <em>key</em> and <em>value</em>). The <em>mapped values</em> are stored in a hash table, at a position determined by the hash of the <em>key value</em>. You can think of this "map" idea as being similar to a dictionary: the key values are the words in a dictionary, and the mapped values are the definitions. If I know a word, I can very quickly find its definition. (Some words have multiple definitions&mdash;how does that relate to the <em>hash</em>map?) Of course, Reading the documentation for the C++ and Java implementations, can you tell whether these hash tables are using chaining or linear probing?
   </p>
 
   <p>Take a look at these exercises: 5.1 &nbsp; 5.5 &nbsp; 5.6 &nbsp; 5.7 &nbsp; 5.8 &nbsp; 5.9 (this requires a little bit of careful thought).</p>
