@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Unit 6 Reading Guide</title>
+
+<link rel="stylesheet" type="text/css" href="css/html5reset.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/col.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/8cols.css" media="all"/>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400'
+    rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+  <div class="section group">
+    <div class="coursename span_8_of_8">
+      <a href="index.html">CISC 3130</a>
+    </div>
+  </div>
+
+  <h2>Unit 6 Reading Guide</h2>
+
+
+  <p>It's probably useful to start understanding the chapter by checking out what "hash" means. For example, on <a href="https://en.wikipedia.org/wiki/Hash_function">Wikipedia</a>, a "hash function" is described as any function "that can be used to map data of arbitrary size to data of fixed size." And indeed, at the beginning of 5.1, the book says, "The hash value of a data item x, denoted hash(x) is a value in the range 0...t.length-1." That is, no matter <em>what</em> kind of thing x is, hash() will always produce a value between 0 a t.length-1. Data of arbitrary size (x) is being mapped to data of fixed size (the index of the array).
+  </p>
+
+
+  <p>The first approach to hash tables the book discusses is "hashing with chaining." First question: what's the "chaining"? Hint: what is the type of the array elements?
+  </p>
+
+  <p>In the initial discussion of hashing with chaining, the book talks about the function hash() but doesn't actually define the function. What makes for a "good" hash function versus a "bad" hash function? What if hash() is defined as the simple function hash(x) = 1? Is that good or bad?
+  </p>
+
+  <p>Note that the code in 5.1.1 is just a bit different from the formula in the&mdash;the text talks about z &middot; x mod 2<sup>w</sup>, but the code talks about <code>hashCode(x)</code> instead of just x. Don't worry about that for now--imagine the code just says <code>x</code>: section 5.3 will clear this up.
+  </p>
+
+  <p>You should understand what Lemmas 5.1 and 5.2 say, as well as Theorem 5.1, but don't worry about the proofs. What <em>do</em> Lemmas 5.1 and 5.2 say? Restate them in your own words, maybe with a little less mathematics. Going back to Chapter 1, what data structure does a hash table implement?
+  </p>
+
+  <p>Moving on to 5.2. What is the essential difference in approach between hashing with chaining and linear probing? (What does "probing" mean in this context?)
+  </p>
+
+  <p>This is tricky but important: why does the book distinguish between <code>null</code> values, where no value has ever been stored, and <code>del</code> values, where values <em>used</em> to be stored? Why can't we just do something that might be a little more "natural," like just letting <code>null</code> mean "there's no value stored here right now"? (Hint: where is <code>del</code> used in the code?)</p>
+
+  <p>The book says, "we need t to be considerably larger than q, so that there are lots of null values in t." OK. Note that this section doesn't have any diagrams. Use the code and the text to diagram what t might look like if, say, q is 16. You might consider what an arbitrary sequence of add() and remove() operations would do to the hash table.</p>
+
+  <p>The efficiency analysis (again, don't worry about the proofs) about hash table operations in 5.2.1 and 5.2.2 yields some pretty amazing results. What is the "price" we pay for these good results?</p>
+
+  <p>Don't worry much about tabulation hashing for now.</p>
+
+  <p>Moving on to 5.3. In the previous two sections, what types of values were we putting into hash tables? in this section, we look how to put <em>any</em> kind of value into hash tables. Think carefully about the two properties of "hash code mappings." Why is each of them important?
+  </p>
+
+  <p>As the notation <code>x.hashCode() = y.hashCode()</code> suggests, it's natural to use object-oriented thinking to associate hash codes with arbitrary objects. Indeed, every Java object has a <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode()">hashCode() method</a>. According to the documentation at this link, does the Java hashCode() method follow the two properties the book requires?</p>
+
+  <p>Sections 5.3.2 and 5.3.3 use a fair amount of mathematics. Don't worry about the math. But <em>why</em> do we need to that much fiddly stuff? What's the problem we're trying to solve? Why wouldn't a simpler solution be just as good?
+  </p>
+
+  <p>Finally, let's talk about how hash tables are used in the libraries of programming languages. In Java, one very commonly used class is <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>; the C++ STL offers a similar template class, <a href="http://www.cplusplus.com/reference/unordered_map/unordered_map/">unordered_map</a>. In both cases, the idea is to make an association between a <em>key value</em> and a <em>mapped value</em> (sometimes just called <em>key</em> and <em>value</em>). The <em>mapped values</em> are stored in a hash table, at a position determined by the hash of the <em>key value</em>. You can think of this "map" idea is being similar to a dictionary: the key values are the words in a dictionary, and the mapped values are the definitions. If I know a word, I can very quickly find its definition. (Some words have multiple definitions&mdash;how does that relate to the <em>hash</em>map?) Reading the documentation for the C++ and Java implementations, can you tell whether these hash tables are using chaining or linear probing?
+  </p>
+
+  <p>Take a look at these exercises: 5.1 &nbsp; 5.5 &nbsp; 5.6 &nbsp; 5.7 &nbsp; 5.8 &nbsp; 5.9 (this requires a little bit of careful thought).</p>
+
+ <hr/>
+</body>
+</html>
