@@ -23,10 +23,12 @@
 
   <h2>Final Exam Guide</h2>
 
-  <p>The final exam will be cumulative, so in addition to the material on this page, everything on the <a href="docs/MidtermReview.pdf">midterm review</a> sheet is relevant.
+  <p>The final exam will be cumulative, so in addition to the material on this page, everything on the <a href="docs/MidtermReview.pdf">midterm review</a> sheet is relevant. Expect the final to focus more on material from units 4 through 6, but not to the exclusion of units 1 through 3.
   </p>
   <h3>Notes</h3>
   <p>You are permitted to bring one 8.5x11 sheet of paper to the exam. You may use the front and back. Everything on it must be hand-written. (Because it's actually better for your brain to write things. Plus you'll need to think carefully about what to include, which also supports your learning and retention). I will inspect your note sheets before the exam.</p>
+
+  <p>If I ask you to write code that makes particular use of the STL (which is likely!), I will give you the relevant method prototypes--that is, don't use space on your note-sheet to write down STL method signatures.</p>
 
   <h3>Exercises</h3>
 
@@ -40,6 +42,337 @@
     10.1  10.2  10.3  10.6  10.7  10.9
     11.1  11.2
     5.1  5.5  5.6  5.7  5.8  5.9*    </pre>
+
+<h3>Concepts</h3>
+
+  <p>You should be familiar with all the data structures and interfaces we've discussed, and with operations on them. You should be able to talk about time efficiency of operations on different data structures, and be able to compare (a) different operations on the same structure, and (b) the same operation across different structures. You should understand the fundamental ideas behind different sorting algorithms. You should be able to discuss time-versus-space tradeoffs, where appropriate.</p>
+
+  <p>You should be able to read and write code manipulating the book's data structures. You should be able to read and write code using the STL (assuming I provide method signatures).</p>
+
+  <p>You do <em>not</em> need to worry about proving efficiency results, though you should be able to talk about statements like "the ArrayStack resize() operation has constant amortized cost."</p>
+
+
+  <h3>Vocabulary</h3>
+
+  <p>You should be familiar with the terminology of object-oriented programming as it is realized in C++, as well as the following non-exhaustive list of terms:</p>
+  <ul style="list-style: none;">
+<li>amortized analysis</li>
+<li>iterator</li>
+<li>generic code</li>
+<li>interface</li>
+<li>stack</li>
+<li>queue</li>
+<li>deque</li>
+<li>big-Oh</li>
+<li>logarithm</li>
+<li>factorial</li>
+<li>semantics</li>
+<li>FIFO</li>
+<li>queuing discipline</li>
+<li>dictionary</li>
+<li>asymptotic</li>
+<li>optimization</li>
+<li>constant/linear/quadratic/logarithmic time</li>
+<li>traverse (breadth-first, depth-first, in-order, pre-order, post-order</li>
+<li>radix</li>
+<li>tree</li>
+<li>(tree) parent</li>
+<li>(tree) ancestor</li>
+<li>(tree) child</li>
+<li>(tree) descendant</li>
+<li>(tree) sibling</li>
+<li>(tree) root</li>
+<li>(tree) height, depth</li>
+<li>binary search tree</li>
+<li>heap</li>
+
+
+
+
+    <li>probing</li>
+    <li>chaining</li>
+
+    <li>load factor (hash table)</li>
+
+  </ul>
+
+
+
+
+  <h3>More Questions</h3>
+
+<p>Write a BinaryTree::bfTraverse() method that works properly using queue operations (either an ArrayQueue or an SLList using only operations add(x), remove(), and size()). </p>
+
+<p>Assuming we have a binary tree of int values (so Node contains a field int x), write a method that stores in each node its depth. (So, the root stores 0, its children store 1, and so on.) Efficiency should be O(n), of course. You can write helper methods, if you like. </p>
+
+<p>Write a BinaryTree::bfTraverse() method that works properly using queue operations (either an ArrayQueue or an SLList using only operations add(x), remove(), and size()). Put your solution on the board.</p>
+
+  <p>Assuming we have a binary tree of int values (so Node contains a field int x), write a method that stores in each node its depth. (So, the root stores 0, its children store 1, and so on.) Efficiency should be O(n), of course. You can write helper methods, if you like.</p>
+
+<p>If I remove a leaf value from a binary search tree, what’s the maximum number of nodes I will need to change (other than the deleted node)?</p>
+
+<p>If I remove a value in a node with exactly one child, what’s the maximum number of nodes I will need to change (other than the deleted node)?</p>
+
+
+<p>If I remove a value in a node with exactly two childs, what’s the maximum number of nodes I will need to change (other than the deleted node)?</p>
+
+
+<p> What is Eytzinger’s method for?</p>
+
+<pre>
+    a) Turning a nice organized tree into a disorganized pile.
+    b) Representing a complete binary tree as an array.
+    c) Making amazing doughnuts.
+    d) Maintaining the structure of a binary search tree.
+    e) All of the above.</pre>
+
+
+<p>According to Eytzinger’s method, what are the indices of the children of a node stored at index 37 in an array?</p>
+
+<pre>
+    a) 38 and 39
+    b) 76 and 78
+    c) 137 and 237
+    d) 75 and 76
+    e) None of the above</pre>
+
+<p> What is The Heap Property?</p>
+<pre>
+    a) Everything in the left subtree of a node is less than or equal to the node.
+    b) A heap is a disorganized pile.
+    c) A heap is a sorted tree.
+    d) If a node has a parent, the value of the node is not smaller than the value of its parent.
+    e) The root is the smallest node.</pre>
+
+
+  <p>Consider the “final state” of the tree in Figure 10.2, after the 6 has been added and repositioned. Now add the values 70, 12, and 8 (in that order) to the heap. </p>
+
+<p>Both the bubbleUp() and trickleDown() methods have O(log n) efficiency, rather than the O(n) efficiency of the binary search tree operations. What characteristic of the trees in this section gives us that improvement?</p>
+
+<pre>
+    a) They’re complete.
+    b) They’re stored in arrays instead of linked nodes.
+    c) They obey The Heap Property.
+    d) They don’t obey the binary search tree property.
+    e) They’re just lucky trees.</pre>
+
+
+  <p>Rewrite trickleDown() to maximize its readability. In particular, change any variable/field names you want to.</p>
+
+<p> Merge the two heaps shown in Figure 10.4. When you have to choose left or right, do one of the following:</p>
+
+<ul>
+<li>	always choose left.
+<li> always choose right.
+<li>	literally flip a coin. Heads=right, tails=left. Record the sequence you come up with.
+</ul>
+<p>	Draw the final heap on the board (along with your coin-flip results for those heaps).</p>
+
+
+<p>In Section 10.1, it says that the BinaryHeap add() and remove() operations have O(log n) time (including amortized resize() operations). In Section 10.2, it says that the MeldableHeap add() and remove() operations have expected time O(log n). What’s the difference?</p>
+
+<pre>
+    a) The BinaryHeap times are worst case; the MeldableHeap times are average case.
+    b) The BinaryHeap times are best case; the MeldableHeap times are worst case;
+    c) There’s no difference.
+    d) The BinaryHeap times account for resize(), but the MeldableHeap times ignore the time to resize().
+    e) The BinaryHeap times are for every case, but the MeldableHeap times are only maximum times.
+</pre>
+
+<p>The BinaryHeap relies on an “backing array” to store data. What structure stores the data in a MeldableHeap?</p>
+
+<pre>
+    a) Also an array.
+    b) A node-based binary tree.
+    c) A priority queue.
+    d) None of the above.
+    e) It doesn’t matter.</pre>
+
+  <p>The book says that MeldableHeap supports the absorb(h) operation—where all the values in h are added to “this” tree, leaving h empty—in O(log n) time, where n is the total number of nodes. Write this method, using (if you wish) the add(), remove(), and merge() methods from the book. Be sure you stay inside that efficiency bound! You may want to remind yourself of exactly how binary trees and nodes are related.</p>
+
+
+<p>The book points out that one limitation of merge-sort is that it requires extra space. How much extra space does it use while sorting an array of size n?</p>
+
+<pre>
+    a) n
+    b) n log n.
+    c) n2
+    d) It depends on the array values.
+    e) It's impossible to predict.</pre>
+
+<p>The book gives an expected-case analysis of quicksort. Which of these scenarios would be worse (i.e. would be likely to result in a running time worse than O(n log n)?</p>
+
+<pre>
+    a) The array is already sorted.
+    b) The randomly chosen pivot is always a[0].
+    c) The randomly chosen pivot is always the smallest value in the array.
+    d) The array is filled with n copies of the same value.</pre>
+
+
+
+
+<p>The book spends some time talking about improving the efficiency of heapsort. Here’s the code from the book:</p>
+
+<pre>
+	void sort(array<T> &b) {
+a	    BinaryHeap<T> h(b);
+	    while (h.n > 1) {
+b	      h.a.swap(--h.n, 0);
+c	      h.trickleDown(0);
+	    }
+d	    b = h.a;
+e	    b.reverse();
+	  }</pre>
+
+<p>Which line does the book focus on?</p>
+
+
+<p>Why can't the heapsort efficiency improvement from this chapter be used with heaps in general?</p>
+
+<pre>
+    a) In this chapter specifically, the array already obeys The Heap Property, so there's less work to do.
+    b) In this chapter specifically, the heap is represented as a complete binary tree, so the height is limited.
+    c) In this chapter specifically, we know all the values in the heap ahead of time.
+    d) In this chapter specifically, each of the two children of a[i] are the root of a sub-heap.
+    e) Actually, we can use this efficiency improvement with heaps in general.
+</pre>
+
+<p>How many different sequences of n distinct values are there? (That is, if I have a set of n distinct values, how many different sequences of them can I make?)</p>
+
+<pre>
+    a) n
+    b) n^2
+    c) n^n = n x n x … n x n
+    d) n! = n x (n-1) x …. x 2 x 1
+</pre>
+
+    <p>The book claims that any binary tree with k leaves must have height at least log k. Which of these is the shortest tree with k leaves?</p>
+
+
+<pre>
+    a) A binary search tree
+    b) A heap
+    c) A complete binary tree
+    d) A random binary tree
+    e) An unbalanced binary tree</pre>
+
+
+    <p>So, imagine a binary tree whose leaves correspond to different sequences of n distinct elements. (Each leaf represents one sequence.) What is the minimum possible height of that tree?</p>
+
+<p>Consider using counting sort on the following array, assuming the values are from the range 0-10. What will the c array (or c') contain immediately before the sorted array is written out?</p>
+
+<pre>
+		5 6 2 2 9 4 4 3 8 1   0 8 7 3 5 2 1 0 1 9   9 8 10 1 7 5 2 3 4 6   7 2</pre>
+
+
+<p>How would you describe the value of (1&lt;&lt;d) – 1? Assuming d is a non-negative int.</p>
+
+<p>Here are a few functions that map an integer x to another integer. Order them from worst hash function to best hash function.</p>
+
+<pre>
+f(x) = x
+g(x) = 32
+h(x) = (x * 25417) mod 64
+k(x) = x mod 32
+
+    a) f, g, h, k
+    b) f, g, k, h
+    c) g, h, f, k
+    d) k, h, f, g
+    e) g, f, k, h</pre>
+
+
+<p>In a hash table (t) using chaining, what is the maximum length of an individual list?</p>
+
+<pre>
+    a) 1
+    b) 2
+    c) n
+    d) t.length
+    e) There is no maximum; lists may be arbitrarily long.</pre>
+
+<p>Note that the chains are not sorted—new values are added to the end of a list. If they were sorted, the find() method might be more efficient. Would it be better to keep the chains sorted? (Obviously, the most important part of this question is the justification for your answer.)</p>
+
+<pre>
+    a) No.
+    b) Yes.</pre>
+
+<p>In Figure 5.2, the calculated hash value of 42 is 00011110 (or 30 decimal). Calculate the hash values for 41 and 43. Also, what is the maximum possible hash value? If your team has a Mac, you can use the “Programmer” view of the Calculator application. Or, you can write a wee program that includes the book's hash function.</p>
+
+<p>Let's now think about the logic of linear probing. In the implementation of find() (section 5.2), the book's code says</p>
+
+<pre>
+  while (t[i] != null)</pre>
+
+
+<p>basically, keep looking for x until you hit an empty element. But del elements are also “empty.” Why doesn't the book's code instead say</p>
+
+<pre>while ( (t[i] != null) && (t[i] != del) )</pre>
+
+
+<p>?</p>
+
+<pre>
+    a) This is another mistake by the book's author.
+    b) A del value represents a former hash table element with the same hash value as x; there could be more after that position.
+    c) We don't know anything about what used to be where the del is, so we must keep looking.
+    d) Actually, the code should say while ( (t[i] != null) || (t[i] != del) )
+</pre>
+
+
+    <p>In the implementation of add(), what does the first line if (find(x) != null) return false; mean?</p>
+
+<pre>
+    a) If the table doesn't have any null spaces available, then give up.
+    b) If the space where we're trying to store x isn't empty, then give up.
+    c) If x is already in the table, there's nothing to do.
+    d) If x has already been deleted from the table, we can't store it again.</pre>
+
+<p> In the implementation of add(), what does the line if (t[i] == null) q++; mean?</p>
+
+<pre>
+    a) This cell is about to become del, so increment q.
+    b) The number of elements stored in the table is about to increase, so increase q.
+    c) q is the number of null elements, so we're going through and counting those.
+    d) Actually, q counts non-null values, so the line should read if (t[i] != null) q++;</pre>
+
+<p>Let’s turn our attention now to hash codes for more complex objects. But let’s not get too complicated. Remember the XOR operation? If a and b are bits, then a XOR b is 1 when exactly one of a and b is one. It can be a useful way to combine multiple bitstrings (it shows up a lot in cryptography, for example).  So suppose we have a complex object, like a Point, that consists of two int values x and y. So, what about using x ^ y as the hashcode for Point objects? (That’s how you say XOR in C++.)</p>
+
+<p>Specifically: does this satisfy property 1 (at the beginning of Section 5.3)? If no, give an example of two objects that are equal but have different hashcodes.</p>
+
+<p>And does this satisfy property 2? If no, give an example of a (large) set of objects that aren’t equal but have the same hashcode.</p>
+
+
+<p> OK, do that analysis again, but now let’s do simple addition—the hashcode for a Point is just x + y.<p>
+
+<p>According to the documentation, does the unordered_map template in the STL use chaining, linear probing, or some other kind of hash table organization?</p>
+
+<pre>
+    a) chaining
+    b) linear probing
+    c) definitely not chaining
+    d) definitely not linear probing
+    e) we can’t tell at all from the public documentation</pre>
+
+<p>How does the size (number of “slots”) of an unordered_map change over time?</p>
+
+<pre>    a) It doesn’t; it has a constant size determined by its constructor
+    b) It grows as necessary to keep the “load factor” under control.
+    c) It grows and shrinks as necessary to keep both the “load factor” and the size of the table under control.
+    d) It only grows/shrinks when the user asks it to, via the reserve() method.
+    e) None of the above.</pre>
+
+<p>Suppose we want to use unordered_map with our Point class. What do we need to do?</p>
+
+<pre>
+    a) Nothing! The STL includes a hash() function that “magically works” for any kind of value.
+    b) We can’t use the STL because unordered_map only works for Key values that are built-in types.
+    c) As long as Point includes a method that takes a single Point parameter and returns an int, unordered_map will automatically use it.
+    d) We need to write an operator that works like a proper hash function for Point.
+</pre>
+
+
+
 
 
  <hr/>
